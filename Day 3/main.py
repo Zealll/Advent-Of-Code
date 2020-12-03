@@ -9,22 +9,44 @@ for each in paths:
     # - Part 1: 259
     # - Part 2: 2224913600
 
-
-
 def treeCounter(rightCount, downCount):
     right = rightCount
-    count = 0
+    total = 0
+
     for i in range(downCount, len(arr), downCount):
-        string = '' 
-        for _ in range(math.ceil(right / (len(arr[i]) - 1 // rightCount if rightCount == 1 else len(arr[i]) // rightCount))):
-            string += arr[i]
+        if right > len(arr[i]) - 1:
+            right -= len(arr[i])
 
-        if string[right] == '#':
-            count += 1
+        if arr[i][right] == '#':
+            total += 1
         right += rightCount
-    return count
 
+    return total
+# print(treeCounter(3, 1))
 print(treeCounter(1, 1) * treeCounter(1, 2) * treeCounter(3, 1) * treeCounter(5, 1) * treeCounter(7, 1))
+
+
+
+
+
+
+
+# ======= VERSION 2 =======
+
+# def treeCounter(rightCount, downCount):
+#     right = rightCount
+#     count = 0
+#     for i in range(downCount, len(arr), downCount):
+#         string = '' 
+#         for _ in range(math.ceil(right / (len(arr[i]) - 1 // rightCount if len(arr) % rightCount == 0 else len(arr[i]) // rightCount))):
+#             string += arr[i]
+
+#         if string[right] == '#':
+#             count += 1
+#         right += rightCount
+#     return count
+
+# print(treeCounter(1, 1) * treeCounter(1, 2) * treeCounter(3, 1) * treeCounter(5, 1) * treeCounter(7, 1))
 
 
 
@@ -68,7 +90,7 @@ print(treeCounter(1, 1) * treeCounter(1, 2) * treeCounter(3, 1) * treeCounter(5,
 #         countFive += 1
 
 #     rightFive += 5
-
+# # print(countFive)
 # rightSeven = 7
 # countSeven = 0
 # for i in range(1, len(arr)):
@@ -81,6 +103,7 @@ print(treeCounter(1, 1) * treeCounter(1, 2) * treeCounter(3, 1) * treeCounter(5,
 #         countSeven += 1
 
 #     rightSeven += 7
+# # print(countSeven)
 
 # rightOneSecond = 1
 # countOneSecond = 0
@@ -94,5 +117,6 @@ print(treeCounter(1, 1) * treeCounter(1, 2) * treeCounter(3, 1) * treeCounter(5,
 #         countOneSecond += 1
 
 #     rightOneSecond += 1
+# # print(countOneSecond)
 
 # print(countOne * countOneSecond * countThree * countFive * countSeven)

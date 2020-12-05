@@ -4,6 +4,11 @@ arr = []
 for each in test:
     arr.append(each.split()[0])
 
+# Correct Answers:
+    # - Part 1: 938
+    # - Part 2: 696
+
+
 rowNum = [i for i in range(128)]
 
 columnNum = [i for i in range(8)]

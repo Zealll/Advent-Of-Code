@@ -1,9 +1,8 @@
-import math
-paths = open('test.txt', 'r')
+passports = open('passports.txt', 'r')
 
 arr = []
-for each in paths:
-    arr.append(each.split())
+for passport in passports:
+    arr.append(passport.split())
 
 # Correct Answers:
     # - Part 1: 216
@@ -105,7 +104,7 @@ def validator(x, y):
     return [validFormat, key]
     
 
-    
+
 if __name__ == '__main__':
     main()
 

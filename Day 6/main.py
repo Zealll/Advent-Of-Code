@@ -16,22 +16,21 @@ total = 0
 for i in filteredAnswers:
     # print(i)
     if len(i) == 1:
-        total += len(i[0])
-        print(i[0])
+        count = 0
+        letters = ''
+        for letter in range(len(i[0])):
+            if i[0][letter] not in letters:
+                count += 1
+        total += count
     else:
         exampleString = [i[0]]
         for group in range(1, len(i)):
             exampleString.append([])
             for letter in i[group]:
-                if letter in exampleString[len(exampleString) - 2]:
-                    if letter not in exampleString[len(exampleString) - 1]:
+                if letter in exampleString[len(exampleString) - 2] and letter not in exampleString[len(exampleString) - 1]:
                         exampleString[len(exampleString) - 1].append(letter)
-        # print(exampleString[len(exampleString) - 1])
+
         total += len(exampleString[len(exampleString) - 1])
-    
-
-
-    # total += len(answered)
 
 print(total)
 

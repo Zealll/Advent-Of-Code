@@ -1,8 +1,8 @@
-test = open('test.txt', 'r')
+directions = open('directions.txt', 'r')
 
 arr = []
-for each in test:
-    arr.append(each.split()[0])
+for direction in directions:
+    arr.append(direction.split()[0])
 
 # Correct Answers:
     # - Part 1: 938

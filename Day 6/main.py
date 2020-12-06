@@ -1,27 +1,30 @@
-test = open('test.txt', 'r')
+testGroup = open('testGroup.txt', 'r')
 
 arr = []
-for each in test:
-    arr.append(each.split())
+for group in testGroup:
+    arr.append(group.split())
 
-filteredAnswers = [[]]
+combinedGroups = [[]]
 for i in arr:
     if len(i) == 0:
-        filteredAnswers.append(i)
+        combinedGroups.append(i)
     else:
-        filteredAnswers[len(filteredAnswers) - 1] += i
+        combinedGroups[len(combinedGroups) - 1] += i
+
+# Correct Answers:
+    # - Part 1: 6504
+    # - Part 2: 3351
+
 
 # ======= Part 2 =======
 total = 0
-for i in filteredAnswers:
-    # print(i)
+for i in combinedGroups:
     if len(i) == 1:
-        count = 0
         letters = ''
         for letter in range(len(i[0])):
             if i[0][letter] not in letters:
-                count += 1
-        total += count
+                letters += i[0][letter]
+        total += len(letters)
     else:
         exampleString = [i[0]]
         for group in range(1, len(i)):
@@ -37,7 +40,7 @@ print(total)
 
 # ======= Part 1 =======
 # total = 0
-# for i in filteredAnswers:
+# for i in combinedGroups:
 #     fullString = ''.join(i)
 #     answered = []
 #     for letter in fullString:

@@ -13,7 +13,7 @@ for group in test:
 tempBags = [[1, 'shiny gold']]
 
 counter = 0
-sec = 0
+
 while tempBags:
     currBag = tempBags[0]
 

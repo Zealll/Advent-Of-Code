@@ -9,8 +9,6 @@ for group in test:
     # - Part 2: 662
 
 
-
-
 # ======= Part 2 =======
 def checker(array):
     visited = []

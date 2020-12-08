@@ -5,8 +5,10 @@ for group in test:
     arr.append(group.split())
     
 # Correct Answers:
-    # - Part 1: 268
-    # - Part 2: 7867
+    # - Part 1: 1832
+    # - Part 2: 662
+
+
 
 
 # ======= Part 2 =======
